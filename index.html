@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>زمانه · Zamaneh — Clocks & Decor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#081224;--bg2:#0d1b34;--panel:#12223f;--line:rgba(232,197,138,.18);--gold:#c9964f;--gold2:#ecd0a0;--cream:#f5eee2;--ink:#e9eef8;--mut:#9aa8c2;--paper:#f5eee2;--pink:#1a2b4d;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Vazirmatn',system-ui,sans-serif;line-height:1.7;padding-bottom:78px;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Reem Kufi','Vazirmatn',sans-serif;font-weight:600;line-height:1.3}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 18px}
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(8,18,36,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:62px;gap:10px}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Reem Kufi';font-size:23px;color:var(--gold2)}
+.logo svg{width:28px;height:28px}
+.dnav{display:none;gap:22px;font-size:15px;color:var(--mut)}
+.dnav a:hover{color:var(--gold2)}
+.hdr-r{display:flex;align-items:center;gap:8px}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:12.5px}
+.lang button{padding:5px 10px;color:var(--mut)} .lang button.on{background:var(--gold);color:#1a1205;font-weight:700}
+.ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;position:relative;border:1px solid var(--line)}
+.ic svg{width:20px;height:20px;stroke:var(--gold2);fill:none;stroke-width:1.7}
+.badge{position:absolute;top:-4px;inset-inline-end:-4px;background:var(--gold);color:#1a1205;font-size:11px;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px}
+@media(min-width:900px){.dnav{display:flex}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:34px 0 40px;background:radial-gradient(1000px 520px at 50% 18%,#1a2f58 0%,#0b162c 55%,#081224 100%)}
+.bigclock{position:absolute;inset-inline:0;top:-120px;margin:auto;width:760px;max-width:140vw;opacity:.14;pointer-events:none}
+.hero h1{font-size:clamp(28px,5.4vw,52px);text-align:center;color:#fff;margin:8px 0 8px;position:relative}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p.sub{text-align:center;color:var(--mut);max-width:600px;margin:0 auto 6px;position:relative;font-size:15px}
+.flow{position:relative;height:min(62vw,380px);min-height:290px;perspective:1100px;margin:26px auto 8px;max-width:980px;touch-action:pan-y;user-select:none}
+.fc{position:absolute;top:0;left:50%;width:min(52vw,250px);height:100%;margin-left:calc(min(52vw,250px)/-2);border-radius:22px;overflow:hidden;cursor:pointer;
+ background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(236,208,160,.28);box-shadow:0 24px 50px rgba(0,0,0,.5);transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s,filter .6s}
+.fc img{width:100%;height:76%;object-fit:cover;background:#0d1b34}
+.fc .cap{position:absolute;inset:auto 0 0 0;height:24%;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(180deg,rgba(8,18,36,.1),rgba(8,18,36,.85));backdrop-filter:blur(8px)}
+.fc .cap b{font-family:'Reem Kufi';font-size:18px;color:var(--gold2)} .fc .cap span{font-size:12px;color:var(--mut)}
+.fdots{display:flex;gap:7px;justify-content:center;margin-top:14px;position:relative}
+.fdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25);transition:.3s} .fdots i.on{width:22px;border-radius:5px;background:var(--gold)}
+.cta{display:flex;gap:10px;justify-content:center;margin-top:20px;position:relative;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:99px;font-weight:700;font-size:15px;transition:.25s}
+.btn.g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1205} .btn.g:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,150,79,.35)}
+.btn.o{border:1px solid var(--gold);color:var(--gold2)} .btn.o:hover{background:rgba(201,150,79,.12)}
+/* cats */
+.cats{display:flex;gap:10px;overflow-x:auto;padding:22px 18px 6px;scrollbar-width:none;max-width:1240px;margin:0 auto}
+.cats::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 18px;border-radius:99px;border:1px solid var(--line);color:var(--mut);font-size:14px;transition:.2s}
+.chip.on{background:var(--gold);color:#1a1205;border-color:var(--gold);font-weight:700}
+/* sections */
+section{padding:44px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;margin-bottom:20px;gap:10px}
+.sh h2{font-size:clamp(22px,3.4vw,32px);color:var(--gold2)}
+.sh small{color:var(--mut)}
+.light{background:var(--paper);color:#1a2236}
+.light .sh h2{color:#7a4f1c} .light .card{background:#fff;border-color:#e9dcc3} .light .card .nm{color:#1a2236} .light .card .br{color:#8a7a5c}
+.row{display:flex;gap:16px;overflow-x:auto;padding:4px 18px 14px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.row .card{flex:none;width:min(66vw,240px);scroll-snap-align:start}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.3s;cursor:pointer;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.card .im{aspect-ratio:1;background:#eee7da;position:relative;overflow:hidden}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:.5s} .card:hover .im img{transform:scale(1.06)}
+.card .im img.b{position:absolute;inset:0;opacity:0} .card:hover .im img.b{opacity:1}
+.tag{position:absolute;top:10px;inset-inline-start:10px;background:var(--gold);color:#1a1205;font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:99px;z-index:2}
+.card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px;flex:1}
+.card .br{font-size:12px;color:var(--mut);letter-spacing:.04em}
+.card .nm{font-size:14.5px;line-height:1.55;color:#f1f4fb;min-height:45px}
+.pr{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:8px}
+.pr b{font-family:'Vazirmatn';font-weight:700;font-size:17px;color:var(--gold2)} .light .pr b{color:#8a5a1d}
+.pr s{font-size:12.5px;color:var(--mut)}
+.add{margin-top:10px;padding:9px;border-radius:12px;border:1px solid var(--gold);color:var(--gold2);font-size:14px;font-weight:500;transition:.2s}
+.add:hover{background:var(--gold);color:#1a1205} .light .add{color:#7a4f1c}
+/* offer */
+.offer{display:grid;gap:22px;align-items:center;background:linear-gradient(135deg,#13264a,#0b162c);border:1px solid var(--line);border-radius:26px;padding:22px;overflow:hidden}
+@media(min-width:800px){.offer{grid-template-columns:1fr 1fr;padding:34px}}
+.offer img{border-radius:18px;width:100%;aspect-ratio:1;object-fit:cover}
+.offer h3{font-size:clamp(22px,3vw,30px);color:#fff;margin:6px 0}
+.pct{display:inline-block;background:var(--gold);color:#1a1205;font-weight:700;padding:3px 14px;border-radius:99px}
+/* toolbar */
+.tb{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tb input,.tb select{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:10px 14px;font:inherit;outline:none;flex:1;min-width:140px}
+.tb input:focus,.tb select:focus{border-color:var(--gold)}
+.more{display:block;margin:26px auto 0}
+/* why */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:900px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 16px;text-align:center}
+.why svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;margin:0 auto 8px}
+.why b{display:block;font-family:'Reem Kufi';font-size:17px;color:var(--gold2)} .why span{font-size:13px;color:var(--mut)}
+/* footer */
+footer{background:#050c19;border-top:1px solid var(--line);padding:34px 0 20px;color:var(--mut);font-size:14px}
+.fg{display:grid;gap:22px;grid-template-columns:1fr} @media(min-width:800px){.fg{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{font-family:'Reem Kufi';color:var(--gold2);margin-bottom:8px;font-size:17px}
+footer a{display:block;padding:2px 0} footer a:hover{color:var(--gold2)}
+.copy{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font-size:12.5px}
+/* bottom nav */
+.bn{position:fixed;inset:auto 0 0 0;z-index:45;background:rgba(8,18,36,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+.bn a,.bn button{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:11.5px;color:var(--mut);padding:4px 10px;position:relative}
+.bn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6}
+.bn .mid{margin-top:-24px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1205;width:58px;height:58px;border-radius:50%;justify-content:center;box-shadow:0 8px 20px rgba(201,150,79,.4);border:4px solid var(--bg)}
+.bn .badge{top:-2px;inset-inline-end:-2px}
+@media(min-width:900px){.bn{display:none}body{padding-bottom:0}}
+/* modal + drawer */
+.ov{position:fixed;inset:0;background:rgba(2,6,14,.72);z-index:60;display:none;backdrop-filter:blur(4px)}
+.ov.on{display:block}
+.modal{position:fixed;z-index:61;inset:auto 0 0 0;max-height:92vh;overflow:auto;background:var(--bg2);border-radius:26px 26px 0 0;border:1px solid var(--line);padding:18px;display:none}
+.modal.on{display:block;animation:up .35s}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media(min-width:800px){.modal{inset:50% auto auto 50%;transform:translate(-50%,-50%);width:min(900px,92vw);border-radius:26px}.modal.on{animation:none}}
+.mg{display:grid;gap:18px} @media(min-width:800px){.mg{grid-template-columns:1fr 1fr}}
+.gal img.main{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;background:#eee7da}
+.th{display:flex;gap:8px;margin-top:8px} .th img{width:62px;height:62px;object-fit:cover;border-radius:10px;border:2px solid transparent;cursor:pointer;opacity:.7} .th img.on{border-color:var(--gold);opacity:1}
+.x{position:absolute;top:12px;inset-inline-end:14px;font-size:24px;color:#fff;z-index:3;width:36px;height:36px;border-radius:50%;background:rgba(8,18,36,.7);line-height:1}
+.mi h3{font-size:22px;color:#fff} .mi .pr b{font-size:26px}
+.spec{margin:14px 0;border-top:1px solid var(--line)} .spec div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px} .spec span{color:var(--mut)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;overflow:hidden} .qty button{width:38px;height:38px;font-size:20px} .qty b{min-width:30px;text-align:center}
+.drawer{position:fixed;z-index:61;top:0;bottom:0;inset-inline-start:auto;inset-inline-end:0;width:min(420px,100vw);background:var(--bg2);border-inline-start:1px solid var(--line);transform:translateX(110%);transition:.35s;display:flex;flex-direction:column}
+[dir=rtl] .drawer{transform:translateX(-110%);inset-inline-end:auto;inset-inline-start:0;right:auto;left:0}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)} .dh h3{color:var(--gold2)}
+.db{flex:1;overflow:auto;padding:12px 18px}
+.ci{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)} .ci img{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#eee7da}
+.ci .t{flex:1;font-size:13.5px} .ci .t b{display:block;color:var(--gold2)}
+.df{padding:14px 18px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:grid;gap:8px}
+.df input{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:10px 14px;font:inherit;outline:none}
+.tot{display:flex;justify-content:space-between;font-size:16px} .tot b{color:var(--gold2);font-size:19px}
+.wa{background:#1fa855;color:#fff;border-radius:99px;padding:13px;font-weight:700;text-align:center}
+.toast{position:fixed;z-index:70;inset:18px 0 auto 0;margin:auto;width:max-content;max-width:90vw;background:var(--gold);color:#1a1205;padding:10px 20px;border-radius:99px;font-weight:700;transform:translateY(-90px);transition:.35s}
+.toast.on{transform:none}
+.empty{color:var(--mut);text-align:center;padding:30px 0}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+ <a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="#ecd0a0" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 3" stroke-linecap="round"/></svg><span data-t="brand"></span></a>
+ <nav class="dnav"><a href="#top" data-t="n_home"></a><a href="#shop" data-t="n_shop"></a><a href="#picks" data-t="n_picks"></a><a href="#about" data-t="n_about"></a></nav>
+ <div class="hdr-r"><div class="lang" id="lang"><button data-l="fa">فا</button><button data-l="ar">ع</button><button data-l="en">EN</button></div>
+ <button class="ic" id="cartBtn" aria-label="cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><span class="badge" id="cnt">0</span></button></div>
+</div></header>
+
+<div id="top" class="hero">
+ <svg class="bigclock" viewBox="0 0 200 200" fill="none" stroke="#ecd0a0"><circle cx="100" cy="100" r="96" stroke-width="1"/><circle cx="100" cy="100" r="88" stroke-width=".4"/><g id="ticks" stroke-width="1.2"></g><line id="hh" x1="100" y1="100" x2="100" y2="58" stroke-width="3" stroke-linecap="round"/><line id="mm" x1="100" y1="100" x2="100" y2="38" stroke-width="2" stroke-linecap="round"/><line id="ss" x1="100" y1="108" x2="100" y2="28" stroke="#c9964f" stroke-width="1"/><circle cx="100" cy="100" r="3" fill="#c9964f" stroke="none"/></svg>
+ <div class="wrap"><h1 data-th="h1"></h1><p class="sub" data-t="sub"></p></div>
+ <div class="flow" id="flow"></div><div class="fdots" id="fdots"></div>
+ <div class="cta"><a class="btn g" href="#shop" data-t="cta1"></a><a class="btn o" href="#picks" data-t="cta2"></a></div>
+</div>
+
+<div class="cats" id="cats"></div>
+
+<section id="offer"><div class="wrap" id="offerBox"></div></section>
+
+<section id="picks" class="light"><div class="wrap"><div class="sh"><h2 data-t="picks"></h2><small data-t="swipe"></small></div></div><div class="row" id="rowPicks"></div></section>
+
+<section id="shop"><div class="wrap">
+ <div class="sh"><h2 data-t="shop"></h2><small id="count"></small></div>
+ <div class="tb"><input id="q" data-ph="search"><select id="sort"><option value="0" data-t="s0"></option><option value="1" data-t="s1"></option><option value="2" data-t="s2"></option></select></div>
+ <div class="grid" id="grid"></div><button class="btn o more" id="more" data-t="more"></button>
+</div></section>
+
+<section class="light"><div class="wrap"><div class="sh"><h2 data-t="new"></h2></div></div><div class="row" id="rowNew"></div></section>
+
+<section><div class="wrap"><div class="why" id="why"></div></div></section>
+
+<section id="about"><div class="wrap"><div class="offer" style="grid-template-columns:1fr"><div><span class="pct" data-t="about_k"></span><h3 data-t="about_h"></h3><p style="color:var(--mut);margin-top:8px" data-t="about_p"></p></div></div></div></section>
+
+<footer id="contact"><div class="wrap"><div class="fg">
+ <div><h4 data-t="brand"></h4><p data-t="foot_p"></p></div>
+ <div><h4 data-t="f_links"></h4><a href="#shop" data-t="n_shop"></a><a href="#picks" data-t="n_picks"></a><a href="#about" data-t="n_about"></a></div>
+ <div><h4 data-t="f_contact"></h4><a href="https://wa.me/9647823247316" target="_blank" dir="ltr">WhatsApp · +964 782 324 7316</a><a data-t="addr"></a></div>
+</div><p class="copy" data-t="copy"></p></div></footer>
+
+<nav class="bn">
+ <a href="#top"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span data-t="n_home"></span></a>
+ <a href="#shop"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span data-t="n_shop"></span></a>
+ <button class="mid" id="cartBtn2"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><span class="badge" id="cnt2">0</span></button>
+ <a href="#picks"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span data-t="n_picks"></span></a>
+ <a href="https://wa.me/9647823247316" target="_blank"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-t="n_call"></span></a>
+</nav>
+
+<div class="ov" id="ov"></div>
+<div class="modal" id="modal"></div>
+<aside class="drawer" id="drawer"><div class="dh"><h3 data-t="cart"></h3><button class="x" style="position:static" id="dx">×</button></div><div class="db" id="cartBody"></div>
+ <div class="df"><div class="tot"><span data-t="total"></span><b id="tot">0</b></div><input id="cn" data-ph="yname"><input id="ca" data-ph="yarea"><a class="wa" id="waBtn" target="_blank" data-t="wa"></a></div></aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const ITEMS=[{"id": 1, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی رومی نقره‌ای", "ar": "ساعة حائط معدنية Schobert 5398", "en": "Schobert Metal Wall clock 5398", "br": "Schobert", "code": "5398", "p": 8850000, "r": 0, "im": ["images/clock_001.jpg"], "d": "قاب فلزی، اعداد رومی برجسته، صفحه طوسی، موتور آرامگرد تایوانی", "s": 90, "new": false}, {"id": 2, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی قدیمی اعداد برجسته", "ar": "ساعة حائط خشبية Schobert 4015", "en": "Schobert Wooden Wall clock 4015", "br": "Schobert", "code": "4015", "p": 4792500, "r": 0, "im": ["images/clock_002.jpg", "images/clock_003.jpg"], "d": "بدنه چوبی، اعداد لاتین خوانا، عقربه مشکی‌طلایی، موتور آرامگرد", "s": 40, "new": false}, {"id": 3, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی دست‌ساز", "ar": "ساعة حائط خشبية Art 114", "en": "Art Wooden Wall clock 114", "br": "Art", "code": "114", "p": 4260000, "r": 0, "im": ["images/clock_004.jpg", "images/clock_005.jpg", "images/clock_006.jpg"], "d": "دست‌ساز از چوب طبیعی، حتی عقربه‌ها چوبی، موتور آرامگرد", "s": 0, "new": false}, {"id": 4, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی اعداد یونانی", "ar": "ساعة حائط خشبية Schobert 6774", "en": "Schobert Wooden Wall clock 6774", "br": "Schobert", "code": "6774", "p": 7357500, "r": 0, "im": ["images/clock_007.jpg", "images/clock_008.jpg"], "d": "قاب چوبی قهوه‌ای، اعداد یونانی برجسته، دو موتور (ثانیه‌شمار مجزا)", "s": 0, "new": false}, {"id": 5, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی مشکی نقره‌ای", "ar": "ساعة حائط معدنية Schobert 5367", "en": "Schobert Metal Wall clock 5367", "br": "Schobert", "code": "5367", "p": 6200000, "r": 0, "im": ["images/clock_009.jpg"], "d": "قاب فلزی، صفحه مشکی و اعداد رومی نقره‌ای، موتور آرامگرد", "s": 60, "new": false}, {"id": 6, "t": "wall", "m": "metal", "fa": "ساعت دیواری طرح چرخ مشکی", "ar": "ساعة حائط معدنية Schobert 5212", "en": "Schobert Metal Wall clock 5212", "br": "Schobert", "code": "5212", "p": 3650000, "r": 0, "im": ["images/clock_010.jpg", "images/clock_011.jpg", "images/clock_012.jpg"], "d": "طرح چرخ و رینگ، دو موتور بی‌صدا، اقتصادی", "s": 50, "new": false}, {"id": 7, "t": "wall", "m": "wood", "fa": "ساعت دیواری صفحه کرم چوبی", "ar": "ساعة حائط خشبية Schobert 5235", "en": "Schobert Wooden Wall clock 5235", "br": "Schobert", "code": "5235", "p": 2160000, "r": 0, "im": ["images/clock_013.jpg"], "d": "صفحه کرم، قاب قهوه‌ای، اعداد لاتین، ثانیه‌شمار مستقل", "s": 60, "new": false}, {"id": 8, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی طلایی صفحه سفید", "ar": "ساعة حائط معدنية Schobert 5305", "en": "Schobert Metal Wall clock 5305", "br": "Schobert", "code": "5305", "p": 4900000, "r": 0, "im": ["images/clock_014.jpg"], "d": "طراحی ظریف و مدرن، قاب فلزی، موتور آرامگرد", "s": 50, "new": false}, {"id": 9, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوب توسکا و سنگ طبیعی", "ar": "ساعة حائط خشبية Bisourt AMH922", "en": "Bisourt Wooden Wall clock AMH922", "br": "Bisourt", "code": "AMH922", "p": 12900000, "r": 0, "im": ["images/clock_015.jpg", "images/clock_016.jpg", "images/clock_017.jpg", "images/clock_018.jpg"], "d": "قاب چوب توسکا، اعداد از سنگ طبیعی، موتور تایوانی دقیق", "s": 77, "new": false}, {"id": 10, "t": "wall", "m": "gear", "fa": "ساعت دیواری چرخ‌دنده‌ای مشکی", "ar": "ساعة حائط بتروس Mandis 7020", "en": "Mandis Gear Wall clock 7020", "br": "Mandis", "code": "7020", "p": 9450000, "r": 0, "im": ["images/clock_019.jpg"], "d": "بدنه فلزی، اعداد لاتین طلایی، چرخ‌دنده متحرک", "s": 70, "new": false}, {"id": 11, "t": "wall", "m": "metal", "fa": "ساعت دیواری میکس‌متال زرد", "ar": "ساعة حائط معدنية Asoureek MXSA29045", "en": "Asoureek Metal Wall clock MXSA29045", "br": "Asoureek", "code": "MXSA29045", "p": 4159000, "r": 0, "im": ["images/clock_020.jpg", "images/clock_021.jpg"], "d": "مدرن و مینیمال، اعداد برجسته، موتور آرامگرد و بی‌صدا", "s": 0, "new": false}, {"id": 12, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی اسپادلا", "ar": "ساعة حائط خشبية Schobert 6778", "en": "Schobert Wooden Wall clock 6778", "br": "Schobert", "code": "6778", "p": 6952500, "r": 0, "im": ["images/clock_022.jpg", "images/clock_023.jpg", "images/clock_024.jpg"], "d": "قاب چوب مقاوم، صفحه قهوه‌ای، اعداد رومی طلایی برجسته", "s": 70, "new": false}, {"id": 13, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی طرح مرغ عشق", "ar": "ساعة حائط خشبية Art 168", "en": "Art Wooden Wall clock 168", "br": "Art", "code": "168", "p": 4200000, "r": 0, "im": ["images/clock_025.jpg"], "d": "دست‌ساز و خلاقانه، طرح مرغ عشق، چوب طبیعی", "s": 0, "new": false}, {"id": 14, "t": "wall", "m": "wood", "fa": "ساعت دیواری عقربه‌ای راش و بلوط", "ar": "ساعة حائط خشبية Volker C7030", "en": "Volker Wooden Wall clock C7030", "br": "Volker", "code": "C7030", "p": 10850000, "r": 0, "im": ["images/clock_026.jpg"], "d": "صفحه فلزی، بدنه راش و روکش بلوط، موتور خورشیدی تایوان", "s": 0, "new": false}, {"id": 15, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی سفید طلایی", "ar": "ساعة حائط معدنية Artemis 2036", "en": "Artemis Metal Wall clock 2036", "br": "Artemis", "code": "2036", "p": 6474000, "r": 0, "im": ["images/clock_027.jpg"], "d": "آبکاری فلزی با رنگ ثابت، اعداد برجسته، موتور آرامگرد", "s": 70, "new": false}, {"id": 16, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی مشکی طلایی", "ar": "ساعة حائط معدنية Schobert 5392", "en": "Schobert Metal Wall clock 5392", "br": "Schobert", "code": "5392", "p": 10200000, "r": 0, "im": ["images/clock_028.jpg"], "d": "قاب فلزی، صفحه مشکی، اعداد رومی طلایی برجسته", "s": 90, "new": false}, {"id": 17, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی مشکی نقره‌ای", "ar": "ساعة حائط معدنية Schobert 5394", "en": "Schobert Metal Wall clock 5394", "br": "Schobert", "code": "5394", "p": 7200000, "r": 0, "im": ["images/clock_029.jpg"], "d": "قاب فلزی، صفحه مشکی، اعداد نقره‌ای برجسته", "s": 90, "new": false}, {"id": 18, "t": "table", "m": "metal", "fa": "ساعت رومیزی طلایی پایه تلسکوپی", "ar": "ساعة مكتبية معدنية Schobert 6012", "en": "Schobert Metal Table clock 6012", "br": "Schobert", "code": "6012", "p": 2630000, "r": 0, "im": ["images/clock_030.jpg"], "d": "پایه‌های تلسکوپی، اعداد رومی، بدنه فلزی", "s": 0, "new": false}, {"id": 19, "t": "table", "m": "metal", "fa": "ساعت رومیزی نقره‌ای صفحه مشکی", "ar": "ساعة مكتبية معدنية Schobert 6010QB", "en": "Schobert Metal Table clock 6010QB", "br": "Schobert", "code": "6010QB", "p": 2362500, "r": 0, "im": ["images/clock_031.jpg"], "d": "فلزی با رنگ استاتیک، مناسب میز کار و کنسول", "s": 0, "new": false}, {"id": 20, "t": "table", "m": "metal", "fa": "ساعت رومیزی خاکستری اعداد رومی", "ar": "ساعة مكتبية معدنية Artemis 30270", "en": "Artemis Metal Table clock 30270", "br": "Artemis", "code": "30270", "p": 2184000, "r": 0, "im": ["images/clock_032.jpg", "images/clock_033.jpg"], "d": "آبکاری باکیفیت، در سه رنگ، موتور آرامگرد", "s": 0, "new": false}, {"id": 21, "t": "table", "m": "metal", "fa": "ساعت رومیزی سفید صفحه مشکی", "ar": "ساعة مكتبية معدنية Schobert 6010WB", "en": "Schobert Metal Table clock 6010WB", "br": "Schobert", "code": "6010WB", "p": 2025000, "r": 0, "im": ["images/clock_034.jpg"], "d": "فلزی سفید، موتور آرامگرد", "s": 0, "new": false}, {"id": 22, "t": "table", "m": "metal", "fa": "ساعت رومیزی آبکاری سفید", "ar": "ساعة مكتبية معدنية Schobert 6011", "en": "Schobert Metal Table clock 6011", "br": "Schobert", "code": "6011", "p": 1280000, "r": 0, "im": ["images/clock_035.jpg"], "d": "فلز آبکاری شده، مناسب میز کار و کنسول", "s": 0, "new": false}, {"id": 23, "t": "table", "m": "metal", "fa": "ساعت رومیزی تیتانیوم", "ar": "ساعة مكتبية معدنية Artemis 6030", "en": "Artemis Metal Table clock 6030", "br": "Artemis", "code": "6030", "p": 2834000, "r": 0, "im": ["images/clock_036.jpg", "images/clock_037.jpg"], "d": "رنگ تیتانیوم، اعداد رومی، موتور آرامگرد", "s": 0, "new": false}, {"id": 24, "t": "art", "m": "wood", "fa": "تابلو ماه و ساعت کلبه چوبی در جنگل", "ar": "لوحة ساعة خشبية Celin M3", "en": "Celin Wooden Wall art clock M3", "br": "Celin", "code": "M3", "p": 9800000, "r": 0, "im": ["images/clock_038.jpg", "images/clock_039.jpg"], "d": "تابلو برجسته سه‌بعدی، کلبه چوبی که در تاریکی می‌درخشد، قابل استفاده به‌عنوان چراغ خواب، نور RGB", "s": 0, "new": true}, {"id": 25, "t": "wall", "m": "metal", "fa": "ساعت دیواری مدرن لوکس طلایی و سیلور", "ar": "ساعة حائط معدنية Celin 17L", "en": "Celin Metal Wall clock 17L", "br": "Celin", "code": "17L", "p": 6500000, "r": 0, "im": ["images/clock_040.jpg", "images/clock_041.jpg", "images/clock_042.jpg"], "d": "بدنه فلزی، صفحه چوب و چرم، موتور بی‌صدا با دو سال گارانتی، در سه سایز ۶۰ و ۷۰ و ۸۰", "s": 70, "new": true}, {"id": 26, "t": "wall", "m": "mirror", "fa": "ساعت دیواری آینه‌ای نقره‌ای", "ar": "ساعة حائط مرآة Celin 18", "en": "Celin Mirror Wall clock 18", "br": "Celin", "code": "18", "p": 4000000, "r": 0, "im": ["images/clock_043.jpg"], "d": "ساعت آینه‌ای با موتور آرامگرد و دو سال ضمانت", "s": 0, "new": false}, {"id": 27, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوب حکاکی‌شده", "ar": "ساعة حائط خشبية Celin 17", "en": "Celin Wooden Wall clock 17", "br": "Celin", "code": "17", "p": 3800000, "r": 0, "im": ["images/clock_044.jpg"], "d": "ترکیب چوب، حکاکی روی صفحه، موتور آرامگرد", "s": 0, "new": false}, {"id": 28, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی کلاسیک", "ar": "ساعة حائط خشبية Celin 16", "en": "Celin Wooden Wall clock 16", "br": "Celin", "code": "16", "p": 3800000, "r": 0, "im": ["images/clock_045.jpg"], "d": "طراحی اصیل کلاسیک، موتور آرامگرد، دو سال ضمانت", "s": 0, "new": false}, {"id": 29, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی مشکی مینیمال", "ar": "ساعة حائط معدنية Celin 15M", "en": "Celin Metal Wall clock 15M", "br": "Celin", "code": "15M", "p": 3900000, "r": 0, "im": ["images/clock_046.jpg", "images/clock_047.jpg"], "d": "مینیمال، بدنه فلزی آبکاری‌شده، موتور بی‌صدا", "s": 0, "new": false}, {"id": 30, "t": "art", "m": "wood", "fa": "تابلو ساعت ماه اعداد برجسته", "ar": "لوحة ساعة خشبية Celin 150", "en": "Celin Wooden Wall art clock 150", "br": "Celin", "code": "150", "p": 3400000, "r": 0, "im": ["images/clock_048.jpg"], "d": "اعداد برجسته، نور مخفی، دو قطر ۸۰ و ۱۰۰", "s": 100, "new": false}, {"id": 31, "t": "wall", "m": "wood", "fa": "ساعت دیواری تمام‌چوب طبیعی", "ar": "ساعة حائط خشبية Celin 14", "en": "Celin Wooden Wall clock 14", "br": "Celin", "code": "14", "p": 4000000, "r": 0, "im": ["images/clock_049.jpg"], "d": "چوب طبیعی، طراحی شیک و کلاسیک، موتور آرامگرد", "s": 0, "new": false}, {"id": 32, "t": "wall", "m": "mirror", "fa": "ساعت دیواری آینه‌ای اسیدشویی", "ar": "ساعة حائط مرآة Celin 13", "en": "Celin Mirror Wall clock 13", "br": "Celin", "code": "13", "p": 4600000, "r": 0, "im": ["images/clock_050.jpg"], "d": "بدنه اسیدشویی و نمای آینه‌ای، آیه «وإن یکاد»", "s": 0, "new": false}, {"id": 33, "t": "wall", "m": "metal", "fa": "ساعت دیواری کلاسیک قاب فلزی براق", "ar": "ساعة حائط معدنية Celin 12", "en": "Celin Metal Wall clock 12", "br": "Celin", "code": "12", "p": 3600000, "r": 0, "im": ["images/clock_051.jpg"], "d": "قاب فلزی براق، موتور آرامگرد", "s": 0, "new": false}, {"id": 34, "t": "wall", "m": "metal", "fa": "ساعت دیواری مینیمال مشکی صفحه فلکسی", "ar": "ساعة حائط معدنية Celin 11", "en": "Celin Metal Wall clock 11", "br": "Celin", "code": "11", "p": 2900000, "r": 0, "im": ["images/clock_052.jpg", "images/clock_053.jpg"], "d": "صفحه فلکسی، بدنه فلزی، موتور آرامگرد", "s": 0, "new": true}, {"id": 35, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی کوره‌ای", "ar": "ساعة حائط معدنية Celin 10", "en": "Celin Metal Wall clock 10", "br": "Celin", "code": "10", "p": 3400000, "r": 0, "im": ["images/clock_054.jpeg"], "d": "رنگ‌کاری کوره‌ای، قطر ۶۰", "s": 60, "new": false}, {"id": 36, "t": "wall", "m": "mirror", "fa": "ساعت دیواری آینه‌ای قرآنی بسم الله", "ar": "ساعة حائط مرآة Celin 9", "en": "Celin Mirror Wall clock 9", "br": "Celin", "code": "9", "p": 3700000, "r": 0, "im": ["images/clock_055.jpg"], "d": "آینه برنزی اسیدشویی، قطر ۶۰", "s": 60, "new": false}, {"id": 37, "t": "wall", "m": "mirror", "fa": "ساعت دیواری آینه‌ای سیلور", "ar": "ساعة حائط مرآة Celin 8", "en": "Celin Mirror Wall clock 8", "br": "Celin", "code": "8", "p": 4050000, "r": 0, "im": ["images/clock_056.jpg"], "d": "آینه سیلور اسیدشویی", "s": 0, "new": false}, {"id": 38, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی کد ۷", "ar": "ساعة حائط معدنية Celin 7", "en": "Celin Metal Wall clock 7", "br": "Celin", "code": "7", "p": 3630000, "r": 0, "im": ["images/clock_057.jpg"], "d": "رنگ‌کاری کوره‌ای، قطر ۶۰", "s": 60, "new": false}, {"id": 39, "t": "wall", "m": "metal", "fa": "ساعت دیواری فلزی طلایی", "ar": "ساعة حائط معدنية Celin 6", "en": "Celin Metal Wall clock 6", "br": "Celin", "code": "6", "p": 3400000, "r": 0, "im": ["images/clock_058.jpg"], "d": "فلز رنگ‌کاری کوره‌ای، قطر ۶۰", "s": 60, "new": false}, {"id": 40, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوب روس", "ar": "ساعة حائط خشبية Celin 5", "en": "Celin Wooden Wall clock 5", "br": "Celin", "code": "5", "p": 3300000, "r": 0, "im": ["images/clock_059.jpeg"], "d": "چوب روس، قطر ۶۰", "s": 60, "new": false}, {"id": 41, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی اقتصادی", "ar": "ساعة حائط خشبية Celin 4", "en": "Celin Wooden Wall clock 4", "br": "Celin", "code": "4", "p": 3050000, "r": 0, "im": ["images/clock_060.jpeg"], "d": "ام‌دی‌اف، قطر ۶۰", "s": 60, "new": false}, {"id": 42, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوب ترمو ضدآب", "ar": "ساعة حائط خشبية Celin 3", "en": "Celin Wooden Wall clock 3", "br": "Celin", "code": "3", "p": 4300000, "r": 0, "im": ["images/clock_061.jpg", "images/clock_062.jpg"], "d": "چوب ترمو ضدآب، طراحی مدرن و مینیمال، قطر ۶۰", "s": 60, "new": false}, {"id": 43, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی دایره‌ای", "ar": "ساعة حائط خشبية Celin 2", "en": "Celin Wooden Wall clock 2", "br": "Celin", "code": "2", "p": 4300000, "r": 6400000, "im": ["images/clock_063.jpg", "images/clock_064.jpg"], "d": "چوب ترمو ضدآب، موتور بی‌صدا، ضمانت ۲۴ ماهه", "s": 0, "new": false}, {"id": 44, "t": "wall", "m": "wood", "fa": "ساعت دیواری چوبی مربعی", "ar": "ساعة حائط خشبية Celin 1", "en": "Celin Wooden Wall clock 1", "br": "Celin", "code": "1", "p": 4000000, "r": 0, "im": ["images/clock_065.jpg"], "d": "چوب طبیعی ترمو، سایز ۶۰×۶۰، ضمانت ۲۴ ماهه", "s": 60, "new": false}];
+const WA='9647823247316';
+const TX={
+fa:{brand:'زمانه',n_home:'خانه',n_shop:'فروشگاه',n_picks:'منتخب',n_about:'درباره ما',n_call:'تماس',
+ h1:'زمان را <em>زیبا</em> کنید',sub:'ساعت دیواری، رومیزی و تابلوهای ساعت‌دار؛ از چوب، فلز و آینه — برای هر دکوراسیون.',cta1:'مشاهده فروشگاه',cta2:'منتخب‌ها',
+ picks:'منتخب ما',swipe:'بکشید ›',shop:'همه ساعت‌ها',new:'جدیدترین‌ها',more:'نمایش بیشتر',search:'جستجوی ساعت…',s0:'پیش‌فرض',s1:'ارزان‌ترین',s2:'گران‌ترین',
+ all:'همه',wall:'ساعت دیواری',table:'ساعت رومیزی',art:'تابلو ساعت',mirror:'ساعت آینه‌ای',wood:'چوبی',metal:'فلزی',gear:'چرخ‌دنده‌ای',
+ add:'افزودن به سبد',cart:'سبد خرید',total:'جمع کل',wa:'ارسال سفارش با واتساپ',yname:'نام شما',yarea:'منطقه / شهر',empty:'سبد خالی است',added:'به سبد اضافه شد',
+ offer_k:'پیشنهاد ویژه',off:'تخفیف',buy:'خرید این ساعت',size:'اندازه',type:'نوع',mat:'جنس',brand_l:'برند',code:'کد',cm:'سانتی‌متر',items:'مورد',
+ why:[['موتور آرامگرد','حرکت بی‌صدا و دقیق'],['ضمانت اصالت','کالای اصل با گارانتی موتور'],['ارسال سریع','به سراسر کشور'],['سفارش با واتساپ','بدون نیاز به ثبت‌نام']],
+ about_k:'درباره ما',about_h:'ساعتی که جان خانه است',about_p:'ما ساعت‌های دیواری و رومیزی و تابلوهای ساعت‌دار را از بهترین سازندگان انتخاب می‌کنیم تا هر خانه‌ای ساعت مخصوص خودش را داشته باشد.',
+ foot_p:'فروشگاه تخصصی ساعت و اکسسوری دکور.',f_links:'پیوندها',f_contact:'تماس',addr:'کربلا، عراق',copy:'© زمانه — نمونه نمایشی',cur:'تومان',
+ msg:'سلام، می‌خواهم این ساعت‌ها را سفارش بدهم:',name:'نام',area:'منطقه',tot:'مجموع'},
+ar:{brand:'زمانة',n_home:'الرئيسية',n_shop:'المتجر',n_picks:'المختارات',n_about:'من نحن',n_call:'اتصال',
+ h1:'اجعل الوقت <em>أجمل</em>',sub:'ساعات حائط ومكتب ولوحات بساعة؛ من الخشب والمعدن والمرايا — تناسب كل ديكور.',cta1:'تصفّح المتجر',cta2:'المختارات',
+ picks:'اخترنا لك',swipe:'اسحب ‹',shop:'كل الساعات',new:'وصل حديثاً',more:'عرض المزيد',search:'ابحث عن ساعة…',s0:'الافتراضي',s1:'الأرخص',s2:'الأغلى',
+ all:'الكل',wall:'ساعات حائط',table:'ساعات مكتبية',art:'لوحات ساعة',mirror:'ساعات مرآة',wood:'خشبية',metal:'معدنية',gear:'بتروس',
+ add:'أضف للسلة',cart:'السلة',total:'المجموع',wa:'أرسل الطلب عبر واتساب',yname:'اسمك',yarea:'المنطقة / المدينة',empty:'السلة فارغة',added:'أُضيفت للسلة',
+ offer_k:'عرض خاص',off:'خصم',buy:'اشترِ هذه الساعة',size:'الحجم',type:'النوع',mat:'الخامة',brand_l:'الماركة',code:'الكود',cm:'سم',items:'قطعة',
+ why:[['حركة صامتة','موتور هادئ ودقيق'],['أصلية مضمونة','ضمان على الموتور'],['توصيل سريع','لجميع المحافظات'],['اطلب عبر واتساب','بدون تسجيل']],
+ about_k:'من نحن',about_h:'ساعة تُحيي البيت',about_p:'نختار ساعات الحائط والمكتب واللوحات بساعة من أفضل المصنّعين ليكون لكل بيت ساعته الخاصة.',
+ foot_p:'متجر متخصص بالساعات وإكسسوارات الديكور.',f_links:'روابط',f_contact:'تواصل',addr:'كربلاء، العراق',copy:'© زمانة — نموذج تجريبي',cur:'دينار',
+ msg:'السلام عليكم، أريد طلب هذه الساعات:',name:'الاسم',area:'المنطقة',tot:'المجموع'},
+en:{brand:'Zamaneh',n_home:'Home',n_shop:'Shop',n_picks:'Picks',n_about:'About',n_call:'Call',
+ h1:'Make time <em>beautiful</em>',sub:'Wall clocks, table clocks and clock art in wood, metal and mirror — for every interior.',cta1:'Shop now',cta2:'Our picks',
+ picks:'Our picks',swipe:'Swipe ›',shop:'All clocks',new:'New arrivals',more:'Show more',search:'Search clocks…',s0:'Default',s1:'Price: low to high',s2:'Price: high to low',
+ all:'All',wall:'Wall clocks',table:'Table clocks',art:'Clock art',mirror:'Mirror clocks',wood:'Wooden',metal:'Metal',gear:'Gear',
+ add:'Add to cart',cart:'Cart',total:'Total',wa:'Send order on WhatsApp',yname:'Your name',yarea:'Area / city',empty:'Your cart is empty',added:'Added to cart',
+ offer_k:'Special offer',off:'OFF',buy:'Buy this clock',size:'Size',type:'Type',mat:'Material',brand_l:'Brand',code:'Code',cm:'cm',items:'items',
+ why:[['Silent movement','Smooth and accurate'],['Genuine products','Motor warranty included'],['Fast delivery','Nationwide'],['Order on WhatsApp','No sign-up needed']],
+ about_k:'About us',about_h:'A clock is the heartbeat of a home',about_p:'We pick wall clocks, table clocks and clock art from the best makers so every home can have a clock of its own.',
+ foot_p:'A specialist shop for clocks and décor accessories.',f_links:'Links',f_contact:'Contact',addr:'Karbala, Iraq',copy:'© Zamaneh — demo store',cur:'USD',
+ msg:'Hello, I would like to order these clocks:',name:'Name',area:'Area',tot:'Total'}
+};
+const TYPEN={wall:'wall',table:'table',art:'art'};
+let L=localStorage.getItem('zl')||'ar',cat='all',shown=12,cart={};
+try{cart=JSON.parse(localStorage.getItem('zc')||'{}')}catch(e){}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const t=k=>TX[L][k];
+const nm=p=>L==='fa'?p.fa:L==='ar'?p.ar:p.en;
+function price(toman){if(L==='fa')return toman.toLocaleString('fa-IR')+' '+t('cur');if(L==='ar')return (Math.round(toman/160/1000)*1000).toLocaleString('en')+' '+t('cur');return '$'+Math.round(toman/270000).toLocaleString('en')}
+function num(toman){return L==='fa'?toman:L==='ar'?Math.round(toman/160/1000)*1000:Math.round(toman/270000)}
+const img=u=>encodeURI(u).replace(/%25/g,'%');
+const IM=(u,c='')=>`<img class="${c}" src="${img(u)}" referrerpolicy="no-referrer" alt="" onerror="this.style.opacity=.15">`;
+function setLang(l){L=l;localStorage.setItem('zl',l);document.documentElement.lang=l;document.documentElement.dir=l==='en'?'ltr':'rtl';
+ $$('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));$$('[data-th]').forEach(e=>e.innerHTML=t(e.dataset.th));$$('[data-ph]').forEach(e=>e.placeholder=t(e.dataset.ph));
+ $$('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+ $('#why').innerHTML=t('why').map((w,i)=>`<div><svg viewBox="0 0 24 24">${['<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><path d="M12 7v5l3 2"/>','<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>','<path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/>','<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/>'][i]}</svg><b>${w[0]}</b><span>${w[1]}</span></div>`).join('');
+ buildCats();buildFlow();render();rows();offer();cartUI();closeAll()}
+const CATS=['all','wall','table','art','mirror','wood','metal','gear'];
+function filt(){const q=$('#q').value.trim().toLowerCase();let a=ITEMS.filter(p=>cat==='all'||p.t===cat||p.m===cat);if(q)a=a.filter(p=>(p.fa+p.ar+p.en+p.code+p.br).toLowerCase().includes(q));
+ const s=$('#sort').value;if(s==='1')a=[...a].sort((x,y)=>x.p-y.p);if(s==='2')a=[...a].sort((x,y)=>y.p-x.p);return a}
+function card(p){const off=p.r>p.p?Math.round((1-p.p/p.r)*100):0;return `<div class="card" data-id="${p.id}">${off?`<span class="tag">${off}% ${t('off')}</span>`:p.new?`<span class="tag">NEW</span>`:''}<div class="im">${IM(p.im[0])}${p.im[1]?IM(p.im[1],'b'):''}</div><div class="bd"><span class="br">${p.br} · ${p.code}</span><div class="nm">${nm(p)}</div><div class="pr"><b>${price(p.p)}</b>${off?`<s>${price(p.r)}</s>`:''}</div><button class="add" data-add="${p.id}">${t('add')}</button></div></div>`}
+function render(){const a=filt();$('#count').textContent=a.length+' '+t('items');$('#grid').innerHTML=a.slice(0,shown).map(card).join('')||`<p class="empty">—</p>`;$('#more').style.display=a.length>shown?'block':'none'}
+function rows(){const pk=[1,10,15,24,14,9,25,38].map(i=>ITEMS[i-1]).filter(Boolean);$('#rowPicks').innerHTML=pk.map(card).join('');$('#rowNew').innerHTML=ITEMS.filter(p=>p.new).concat(ITEMS.filter(p=>!p.new&&p.t==='table').slice(0,4)).map(card).join('')}
+function offer(){const p=ITEMS.find(x=>x.r>x.p);if(!p){$('#offerBox').innerHTML='';return}const off=Math.round((1-p.p/p.r)*100);
+ $('#offerBox').innerHTML=`<div class="offer"><div class="im2">${IM(p.im[0])}</div><div><span class="pct">${t('offer_k')} · ${off}% ${t('off')}</span><h3>${nm(p)}</h3><p style="color:var(--mut)">${p.d}</p><div class="pr" style="margin:12px 0"><b style="font-size:28px">${price(p.p)}</b><s>${price(p.r)}</s></div><button class="btn g" data-open="${p.id}">${t('buy')}</button></div></div>`}
+function buildCats(){$('#cats').innerHTML=CATS.map(c=>`<button class="chip ${c===cat?'on':''}" data-c="${c}">${t(c)}</button>`).join('')}
+/* coverflow */
+const FL=[['wall',1],['table',18],['art',22],['mirror',24],['wood',2],['metal',5]];let fi=0,ft;
+function buildFlow(){const f=$('#flow');f.innerHTML=FL.map(([c,id],i)=>{const p=ITEMS[id-1];return `<div class="fc" data-i="${i}" data-c="${c}">${IM(p.im[0])}<div class="cap"><b>${t(c)}</b><span>${ITEMS.filter(x=>x.t===c||x.m===c).length} ${t('items')}</span></div></div>`}).join('');
+ $('#fdots').innerHTML=FL.map((_,i)=>`<i data-i="${i}"></i>`).join('');place()}
+function place(){$$('.fc').forEach((e,i)=>{let o=i-fi;const n=FL.length;if(o>n/2)o-=n;if(o<-n/2)o+=n;const a=Math.abs(o),rtl=document.documentElement.dir==='rtl'?-1:1;
+ e.style.transform=`translateX(${o*rtl*58}%) translateZ(${-a*140}px) rotateY(${-o*rtl*38}deg) scale(${1-a*.06})`;e.style.opacity=a>2?0:1-a*.25;e.style.zIndex=10-a;e.style.filter=a?'brightness(.6)':'none';e.style.pointerEvents=a>2?'none':'auto'});
+ $$('#fdots i').forEach((d,i)=>d.classList.toggle('on',i===fi))}
+function play(){clearInterval(ft);ft=setInterval(()=>{fi=(fi+1)%FL.length;place()},3600)}
+/* cart */
+const sv=()=>localStorage.setItem('zc',JSON.stringify(cart));
+function cartUI(){const ids=Object.keys(cart),n=ids.reduce((s,i)=>s+cart[i],0);$('#cnt').textContent=$('#cnt2').textContent=n;
+ $('#cartBody').innerHTML=ids.length?ids.map(i=>{const p=ITEMS[i-1];return `<div class="ci">${IM(p.im[0])}<div class="t">${nm(p)}<b>${price(p.p*cart[i])}</b><div class="qty" style="margin-top:6px"><button data-q="${i}" data-d="-1">−</button><b>${cart[i]}</b><button data-q="${i}" data-d="1">+</button></div></div></div>`}).join(''):`<p class="empty">${t('empty')}</p>`;
+ const sum=ids.reduce((s,i)=>s+num(ITEMS[i-1].p)*cart[i],0);$('#tot').textContent=ids.length?(L==='en'?'$'+sum.toLocaleString('en'):sum.toLocaleString(L==='fa'?'fa-IR':'en')+' '+t('cur')):'—';
+ let m=t('msg')+'\n';ids.forEach(i=>{const p=ITEMS[i-1];m+=`• ${nm(p)} (${p.code}) ×${cart[i]}\n`});m+=`\n${t('tot')}: ${$('#tot').textContent}\n${t('name')}: ${$('#cn').value}\n${t('area')}: ${$('#ca').value}`;
+ $('#waBtn').href=ids.length?`https://wa.me/${WA}?text=${encodeURIComponent(m)}`:'#'}
+function toast(s){const e=$('#toast');e.textContent=s;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),1600)}
+function addCart(id){cart[id]=(cart[id]||0)+1;sv();cartUI();toast(t('added'))}
+function closeAll(){$('#ov').classList.remove('on');$('#modal').classList.remove('on');$('#drawer').classList.remove('on')}
+function openCart(){closeAll();$('#ov').classList.add('on');$('#drawer').classList.add('on')}
+function openProd(id){const p=ITEMS[id-1];const sp=[[t('brand_l'),p.br],[t('code'),p.code],[t('type'),t(p.t)],[t('mat'),t(p.m)]];if(p.s)sp.push([t('size'),p.s+' '+t('cm')]);
+ $('#modal').innerHTML=`<button class="x" data-close>×</button><div class="mg"><div class="gal"><img class="main" id="mainimg" src="${img(p.im[0])}" referrerpolicy="no-referrer"><div class="th">${p.im.map((u,i)=>`<img class="${i?'':'on'}" src="${img(u)}" referrerpolicy="no-referrer" data-th="${i}">`).join('')}</div></div><div class="mi"><h3>${nm(p)}</h3><div class="pr"><b>${price(p.p)}</b>${p.r>p.p?`<s>${price(p.r)}</s>`:''}</div><p style="color:var(--mut);margin:8px 0">${p.d}</p><div class="spec">${sp.map(r=>`<div><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}</div><button class="btn g" style="width:100%" data-add="${p.id}" data-keep>${t('add')}</button></div></div>`;
+ $('#modal').dataset.id=id;$('#ov').classList.add('on');$('#modal').classList.add('on')}
+document.addEventListener('click',e=>{const T=e.target;let x;
+ if(x=T.closest('[data-add]')){e.stopPropagation();addCart(+x.dataset.add);return}
+ if(x=T.closest('[data-q]')){const i=x.dataset.q;cart[i]=(cart[i]||0)+ +x.dataset.d;if(cart[i]<=0)delete cart[i];sv();cartUI();return}
+ if(x=T.closest('[data-th]')){const p=ITEMS[+$('#modal').dataset.id-1];$('#mainimg').src=img(p.im[+x.dataset.th]);$$('.th img').forEach(i=>i.classList.remove('on'));x.classList.add('on');return}
+ if(T.closest('[data-close]')||T.id==='ov'||T.id==='dx'){closeAll();return}
+ if(x=T.closest('[data-open]')){openProd(+x.dataset.open);return}
+ if(x=T.closest('.card')){openProd(+x.dataset.id);return}
+ if(x=T.closest('#cats .chip')){cat=x.dataset.c;shown=12;buildCats();render();return}
+ if(x=T.closest('.fc')){const i=+x.dataset.i;if(i===fi){cat=x.dataset.c;shown=12;buildCats();render();$('#shop').scrollIntoView({behavior:'smooth'})}else{fi=i;place();play()}return}
+ if(x=T.closest('#fdots i')){fi=+x.dataset.i;place();play();return}
+ if(x=T.closest('#lang button')){setLang(x.dataset.l);return}
+ if(T.closest('#cartBtn,#cartBtn2')){openCart();return}
+ if(T.closest('#more')){shown+=12;render();return}});
+$('#q').oninput=()=>{shown=12;render()};$('#sort').onchange=()=>{shown=12;render()};$('#cn').oninput=$('#ca').oninput=cartUI;
+let sx=null;const fl=$('#flow');fl.addEventListener('pointerdown',e=>sx=e.clientX);fl.addEventListener('pointerup',e=>{if(sx===null)return;const d=e.clientX-sx;sx=null;if(Math.abs(d)>40){const r=document.documentElement.dir==='rtl'?-1:1;fi=(fi+(d>0?-1:1)*r*-1+FL.length)%FL.length;place();play()}});
+/* hero clock */
+(()=>{let s='';for(let i=0;i<60;i++){const a=i*6*Math.PI/180,r1=i%5?91:86,r2=94;s+=`<line x1="${100+Math.sin(a)*r1}" y1="${100-Math.cos(a)*r1}" x2="${100+Math.sin(a)*r2}" y2="${100-Math.cos(a)*r2}"/>`}$('#ticks').innerHTML=s;
+ const tick=()=>{const d=new Date,S=d.getSeconds()+d.getMilliseconds()/1000,M=d.getMinutes()+S/60,H=d.getHours()%12+M/60;$('#ss').setAttribute('transform',`rotate(${S*6} 100 100)`);$('#mm').setAttribute('transform',`rotate(${M*6} 100 100)`);$('#hh').setAttribute('transform',`rotate(${H*30} 100 100)`);requestAnimationFrame(tick)};tick()})();
+setLang(L);play();
+</script>
+</body></html>
